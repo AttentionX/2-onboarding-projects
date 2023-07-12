@@ -25,7 +25,7 @@
   - Function call api 참조
 
 
-# Week 3️⃣ - Free Project: Build whatever you want
+# Week 3️⃣ - Build whatever you want
 - 예시 주제
   - 여러 modality api를 이용한 프로젝트 (OCR Chat, LENS)
   - General World Agent

@@ -11,7 +11,7 @@
 3. Work with your team to go above and beyond. Choose one of the followings or pave your way yourself.
     - search across more than 10 PDFs (e.g. [ChatDOC](https://chatdoc.com))
     - augment the reader with real-time information (e.g. ChatGPT Browser plugin,  Bing Chat, etc) 
-    - augment the reader with multi-modal output (e.g. OCR Chat, LENS)
+    - augment the reader with multimodal output (e.g. OCR Chat, LENS)
 
     
 # Week 2️⃣ - browser automation

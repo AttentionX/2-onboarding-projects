@@ -1,0 +1,24 @@
+[submodule "week1/tinyRAG"]
+	path = week1/tinyRAG
+	url = https://github.com/eubinecto/tinyRAG.git
+[submodule "week1/cohort-two-rag-team1"]
+	path = week1/cohort-two-rag-team1
+	url = https://github.com/AttentionX/cohort-two-rag-team1
+[submodule "week1/cohort-two-rag-team2"]
+	path = week1/cohort-two-rag-team2
+	url = https://github.com/AttentionX/cohort-two-rag-team2
+[submodule "week1/cohort-two-rag-team3"]
+	path = week1/cohort-two-rag-team3
+	url = https://github.com/AttentionX/cohort-two-rag-team3
+[submodule "week1/cohort-two-rag-team4"]
+	path = week1/cohort-two-rag-team4
+	url = https://github.com/AttentionX/cohort-two-rag-team4
+[submodule "week1/cohort-two-rag-team5"]
+	path = week1/cohort-two-rag-team5
+	url = https://github.com/AttentionX/cohort-two-rag-team5
+[submodule "week1/cohort-two-rag-team6"]
+	path = week1/cohort-two-rag-team6
+	url = https://github.com/AttentionX/cohort-two-rag-team6
+[submodule "week1/cohort-two-rag-team7"]
+	path = week1/cohort-two-rag-team7
+	url = https://github.com/AttentionX/cohort-two-rag-team7

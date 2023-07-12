@@ -14,7 +14,7 @@
     - augment the reader with multi-modal output (e.g. OCR Chat, LENS)
 
     
-# Week 2️⃣ - automonous agents
+# Week 2️⃣ - browser automation with agents
 - Action을 해주는 Agent
 - General Action을 해주는 것을 목표
 - 또는 아래 중 택 1

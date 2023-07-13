@@ -32,10 +32,9 @@ def main():
 
     while True:
         query = input("Ask a question:\n")
-        question = OpenAIAPI.get_response(query)
         reponse_embedding = openai_api.get_embedding(response)
         relevant_result =  fetch_from_vectordb(vector_db_index, reponse_embedding)
-        prompt = f"Answer the following question based on the given informaiton:\n\nQuestion: {question}\nGiven Information:\n{relevant_result}"
+        prompt = f"Answer the following question based on the given informaiton:\n\nQuestion: {query}\nGiven Information:\n{relevant_result}"
         response = OpenAIAPI.get_response(prompt)
         print(response)
 

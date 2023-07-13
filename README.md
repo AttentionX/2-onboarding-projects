@@ -4,7 +4,7 @@
 - SOTA LLM을 사용해보면서 성능과 잘하는점, 한계를 직접 체험하고 이를 활용해서 새로운 문제를 해결할 수 있는 프로덕트 만들어보기
 - 동아리의 다양한 사람들과 팀 프로젝트를 해보면서 동아리분들 알아가기
 
-# Week 1️⃣ - retriever-augmented generation (RAG)
+## Week 1️⃣ - retriever-augmented generation (RAG)
 1. learn how the retriever works ([tinyRAG](https://github.com/eubinecto/tinyRAG))
     - `RAGVer1` - keyword search with BM25 
     - `RAGVer2` - semantic search with ANN
@@ -18,7 +18,7 @@
     - augment the reader with multimodal output (e.g. OCR Chat, LENS)
 
     
-# Week 2️⃣ - browser automation
+## Week 2️⃣ - browser automation
 - Action을 해주는 Agent
 - General Action을 해주는 것을 목표
 - 또는 아래 중 택 1
@@ -29,7 +29,7 @@
   - Function call api 참조
 
 
-# Week 3️⃣ - build whatever you want
+## Week 3️⃣ - build whatever you want
 - 예시 주제
   - 여러 modality api를 이용한 프로젝트 (OCR Chat, LENS)
   - General World Agent

@@ -26,6 +26,8 @@ example retriever-augmented answer from `text-ada-002` |
   
 ### Team project - go above and beyond `RAGVer5`
  > 🔥 하이브리드 검색보다 나은 방법이 있을까요? Reader를 더 개선할 수는 없을까요? 팀원들과 함꼐 고민해보고 `RAGVer5`보다 더 나은 Q & A 시스템을 만들어보세요!
+
+
 some pointers:
 1. `RAGVer5`는 하나의 PDF만 검색해 답변합니다. 여러 개 문서를 검색할 수 있게 만들어 보세요! (e.g. [ChatDOC](https://chatdoc.com))
 2. `RAGVer5`처럼 검색엔진을 직접 구축할 필요가 있을까요? 그냥 구글 검색을 떄리면 검색엔진을 만들 필요가 없지 않을까요? Retreiver를 구글 검색으로 바꿔보세요!(e.g. ChatGPT Browser plugin,  Bing Chat, etc) 

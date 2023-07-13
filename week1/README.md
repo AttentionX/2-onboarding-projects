@@ -1,7 +1,7 @@
 # 1. Q&A Chatbot
 
 ## (1) 목표
-- GPT-4 논문에 대해 Q&A 챗봇 만들기
+- GPT-4 논문에 대한 Q&A 챗봇 만들기
 
 ## (2) 참조
 1. OpenAI API ([공식 문서](https://platform.openai.com/docs/guides/gpt/chat-completions-api))

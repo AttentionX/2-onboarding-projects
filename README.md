@@ -4,18 +4,21 @@
 - SOTA LLM을 사용해보면서 성능과 잘하는점, 한계를 직접 체험하고 이를 활용해서 새로운 문제를 해결할 수 있는 프로덕트 만들어보기
 - 동아리의 다양한 사람들과 팀 프로젝트를 해보면서 동아리분들 알아가기
 
-## Week 1️⃣ - retriever-augmented generation (RAG)
-1. learn how the retriever works ([tinyRAG](https://github.com/eubinecto/tinyRAG))
-    - `RAGVer1` - keyword search with BM25 
-    - `RAGVer2` - semantic search with ANN
-    - `RAGVer3` - bringing the best of both worlds with Reciprocal Ranking Fusion
-2. learn how the reader works ([tinyRAG](https://github.com/eubinecto/tinyRAG))
-    - `RAGVer4` - augmented generation with stuffing
-    - `RAGVer5` - moderation with Chain-of-Thought & Microsoft’s guidance
-3. Work with your team to go above and beyond. Choose one of the followings or pave your way yourself.
-    - search across more than 10 PDFs (e.g. [ChatDOC](https://chatdoc.com))
-    - augment the reader with real-time information (e.g. ChatGPT Browser plugin,  Bing Chat, etc) 
-    - augment the reader with multimodal output (e.g. OCR Chat, LENS)
+## Week 1️⃣ - Q&A Chatbot
+- 참고 자료
+  1. learn how the retriever works ([tinyRAG](https://github.com/eubinecto/tinyRAG))
+      - `RAGVer1` - keyword search with BM25 
+      - `RAGVer2` - semantic search with ANN
+      - `RAGVer3` - bringing the best of both worlds with Reciprocal Ranking Fusion
+  2. learn how the reader works ([tinyRAG](https://github.com/eubinecto/tinyRAG))
+      - `RAGVer4` - augmented generation with stuffing
+      - `RAGVer5` - moderation with Chain-of-Thought & Microsoft’s guidance
+  3. Work with your team to go above and beyond. Choose one of the followings or pave your way yourself.
+      - search across more than 10 PDFs (e.g. [ChatDOC](https://chatdoc.com))
+      - augment the reader with real-time information (e.g. ChatGPT Browser plugin,  Bing Chat, etc) 
+      - augment the reader with multimodal output (e.g. OCR Chat, LENS)
+- 태스크
+  - GPT-4 PDF에 대한 Q&A Chatbot 만들기
 
     
 ## Week 2️⃣ - browser automation

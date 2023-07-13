@@ -44,7 +44,6 @@ some pointers:
   - (위와 같이 한 도메인 선택)
   - Function call api 참조
 
- Work with your team to go above and beyond. Choose one of the followings or pave your way yourself.
      
 
 ## Week 3️⃣ - build whatever you want

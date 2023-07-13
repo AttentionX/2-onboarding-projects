@@ -30,7 +30,7 @@ example retriever-augmented answer from `text-ada-002` |
 
 some pointers:
 1. `RAGVer5`는 하나의 PDF만 검색해 답변합니다. 여러 개 문서를 검색할 수 있게 만들어 보세요! (e.g. [ChatDOC](https://chatdoc.com))
-2. `RAGVer5`처럼 검색엔진을 직접 구축할 필요가 있을까요? 그냥 구글 검색을 떄리면 검색엔진을 만들 필요가 없지 않을까요? Retreiver를 구글 검색으로 바꿔보세요!(e.g. ChatGPT Browser plugin,  Bing Chat, etc) 
+2. `RAGVer5`처럼 검색엔진을 직접 구축할 필요가 있을까요? 그냥 구글을 쓰면 되지 않을까요? Retreiver를 구글 검색으로 바꿔보세요!(e.g. ChatGPT Browser plugin,  Bing Chat, etc) 
 3. `RAGVer5`는 텍스트만 이해합니다. 하지만 이미지로 증강할 수는 없을까요? 다중모달 정보로 생성을 증강해보세요! (e.g. GPT4,  OCR Chat, LENS)
 
     

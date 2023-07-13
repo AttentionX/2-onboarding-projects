@@ -25,8 +25,8 @@ example retriever-augmented answer from `text-ada-002` |
       - `RAGVer5` - 더 똑똑하고 안전한 답변을 생성하고 싶다면? - moderation with Chain-of-Thought & Microsoft’s guidance
   
 ### Team project - go above and beyond `RAGVer5`
- > 🔥 하이브리드 검색보다 나은 방법이 있을까요? Reader를 더 개선할 수는 없을까요? 팀원들과 함꼐 고민해보고 `RAGVer5`보다 더 나은 Q & A 시스템을 만들어보세요!
 
+🔥 하이브리드 검색보다 나은 방법이 있을까요? Reader를 더 개선할 수는 없을까요? `RAGVer5`보다 더 나은 Q & A 시스템을 만들어보세요!
 
 some pointers:
 1. `RAGVer5`는 하나의 PDF만 검색해 답변합니다. 여러 개 문서를 검색할 수 있게 만들어 보세요! (e.g. [ChatDOC](https://chatdoc.com))

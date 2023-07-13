@@ -13,7 +13,7 @@
 1. `RAGVer5`는 하나의 PDF만 검색해 답변합니다. 여러 개 문서를 검색하게 만들어보는걸 어떨까요? (e.g. [ChatDOC](https://chatdoc.com))
 2. `RAGVer5`처럼 검색엔진을 직접 구축할 필요가 있을까요?  그냥 구글을 쓰면 되지 않을까요? 실시간 정보도 얻을 수 있지 않을까요? Retreiver를 구글 검색으로 바꿔보는건 어떨까요? (e.g. [WebChatGPT](https://chrome.google.com/webstore/detail/webchatgpt-chatgpt-with-i/lpfemeioodjbpieminkklglpmhlngfcn))
 3. `RAGVer5`는 아직 챗봇이 아닙니다. 대화형 Q & A는 할 수 없습니다. 대화형 Q & A를 구현해보는건 어떨까요?  (e.g. [Mendable](https://www.mendable.ai))
-4. `RAGVer5`는 텍스트만 이해합니다. 하지만 이미지로 증강할 수는 없을까요? 멀티모달 정보로 증강을 해보는건 어떨까요? (e.g. [GPT4의 위엄](https://www.dogdrip.net/471917756))
+4. `RAGVer5`는 텍스트만 이해합니다. 이미지로 증강할 수는 없을까요? 멀티모달 정보로 증강을 해보는건 어떨까요? (e.g. [GPT4의 위력](https://www.google.com/search?client=safari&rls=en&q=gpt4%EC%9D%98+%EC%9C%84%EB%A0%A5&ie=UTF-8&oe=UTF-8))
 
 ## 참조 코드 - OpenAI & Pinecone
 1. OpenAI API ([공식 문서](https://platform.openai.com/docs/guides/gpt/chat-completions-api))

@@ -1,5 +1,9 @@
 # 2기 Onboarding Projects
 
+# 목적
+- SOTA LLM을 사용해보면서 성능과 잘하는점, 한계를 직접 체험하고 이를 활용해서 새로운 문제를 해결할 수 있는 프로덕트 만들어보기
+- 동아리의 다양한 사람들과 팀 프로젝트를 해보면서 동아리분들 알아가기
+
 # Week 1️⃣ - retriever-augmented generation (RAG)
 1. learn how the retriever works ([tinyRAG](https://github.com/eubinecto/tinyRAG))
     - `RAGVer1` - keyword search with BM25 

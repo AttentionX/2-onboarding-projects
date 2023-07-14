@@ -10,8 +10,7 @@
 
 example Q & A with `RAGVer5` | 
 --- | 
-<img href="https://asciinema.org/a/CqOiYktayTo6MXJ5MlgvPKj4C" src="https://asciinema.org/a/CqOiYktayTo6MXJ5MlgvPKj4C.svg"  width="700"/> | 
-
+<a href="https://asciinema.org/a/CqOiYktayTo6MXJ5MlgvPKj4C" target="_blank"><img src="https://asciinema.org/a/CqOiYktayTo6MXJ5MlgvPKj4C.svg" width="700"/></a> |
 -  how it's made - the retriever 🔎
       - `RAGVer1`: term-matching search with BM25
          - pros: high precision (`main goal` / `내일 날씨` 와 같은 키워드 검색에 용이)

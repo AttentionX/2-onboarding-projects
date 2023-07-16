@@ -58,4 +58,4 @@ main goal 같은 키워드 검색엔 약합니다. 키워드 검색 알고리즘
 
 ### Multimodal Q & A
 
-베이스라인은 텍스트만 이해합니다. 이미지로 증강할 수는 없을까요? 멀티모달 정보로 증강을 해보는건 어떨까요?  (e.g. [GPT4의 위력], (https://www.clien.net/service/board/park/17962934), Bard Lens)
+베이스라인은 텍스트만 이해합니다. 이미지로 증강할 수는 없을까요? 멀티모달 정보로 증강을 해보는건 어떨까요?  (e.g. [GPT4의 위력](https://www.clien.net/service/board/park/17962934), Bard Lens)

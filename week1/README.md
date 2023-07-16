@@ -14,7 +14,7 @@ Ask questions with `python3 baseline_qa.py` |
 --- | 
 <a href="https://asciinema.org/a/NDDHUuBb5JQyN3Wck6TrBO6jG" target="_blank"><img src="https://asciinema.org/a/NDDHUuBb5JQyN3Wck6TrBO6jG.svg" width="600" /></a> | 
 
-## Goal 
+## Goal 🥅
 
 팀별로 베이스라인과 문답해보며 문제점을 발견해보세요. 이번 주 온보딩의 목표는 베이스라인의 문제점을 찾고 개선하는 것입니다.
 어떤 문제점이든 좋습니다. 어떤 접근법이든 좋습니다. 베이스라인을 개선하여 공유해주세요!
@@ -24,19 +24,28 @@ Ask questions with `python3 baseline_qa.py` |
 
 ### better chunking
 
-`RAGVer5`는 [같은 섹션에 있는 문장을 모은 뒤](https://github.com/eubinecto/tinyRAG/blob/e6bcacbca872a7e0b04c2baaf992c1126a5fbfa8/main_preprocess.py#L10-L23) 인접한 문장 [2개를 이어 chunk를 만듭니다.](https://github.com/eubinecto/tinyRAG/blob/e6bcacbca872a7e0b04c2baaf992c1126a5fbfa8/main_preprocess.py#L24-L34) 이게 최선일까요? 더 나은 방법은 없을까요? 
+`baseline_chunk.py`를 살펴보면 청킹을 어떻게 했는지 확인할 수 있습니다. 
 
+우선 같은 섹션에 있는 문장을 모은 뒤: 
+https://github.com/AttentionX/season-2-onboarding-projects/blob/5c7be2540aa2349294256ed465cb84f52e068573/week1/baseline_chunk.py#L11-L24
+
+인접한 문장 2개를 이어 chunk를 만들고 있는데요:
+https://github.com/AttentionX/season-2-onboarding-projects/blob/5c7be2540aa2349294256ed465cb84f52e068573/week1/baseline_chunk.py#L25-L35
+
+이게 최선일까요? 더 나은 청킹 알고리즘이 있다면 제안해보세요!
 
 ### Chitchat moderation
  
 쓸데 없는 질의에도 검색을 합니다. - 리소스 낭비다. 
 
+References:
 - Chain-of-Thought prompting 
 - Microsoft's guidance
 
 ### Hybrid Search
 
-references:
+
+References:
 - rank_bm25
 - reciprocal rank fusion
 

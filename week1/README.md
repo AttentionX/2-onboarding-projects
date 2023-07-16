@@ -15,9 +15,8 @@ Ask questions with `python3 baseline_qa.py` |
 <a href="https://asciinema.org/a/NDDHUuBb5JQyN3Wck6TrBO6jG" target="_blank"><img src="https://asciinema.org/a/NDDHUuBb5JQyN3Wck6TrBO6jG.svg" width="600" /></a> | 
 
 ## Goal 🥅
-
-팀별로 베이스라인과 문답해보며 문제점을 발견해보세요. 이번 주 온보딩의 목표는 베이스라인의 문제점을 찾고 개선하는 것입니다.
-어떤 문제점이든 좋습니다. 어떤 접근법이든 좋습니다. 베이스라인을 개선하여 공유해주세요!
+첫 주 온보딩의 목표는 베이스라인의 문제점을 찾고 개선하는 것입니다. 팀별로 베이스라인과 문답해보며 문제점을 발견해보세요. 
+어떤 문제점이든 좋습니다. 어떤 접근법이든 좋습니다. 베이스라인을 개선하여 공유해주세요 ❤️‍🔥
 
 ## Some Pointers 👇
 ### Better Chunking

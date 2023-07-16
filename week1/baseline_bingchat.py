@@ -5,6 +5,12 @@ from playwright.async_api import async_playwright
 def get_google_query(query):
     raise NotImplementedError
 
+def get_webpage_text(page, link):
+    page.goto(link)
+    
+    # Get webpage text
+    raise NotImplementedError
+
 async def playwright_init():
     playwright = await async_playwright().start()
     browser = await playwright.chromium.launch()
@@ -40,6 +46,13 @@ def main():
                     };
                 });
             }''', k)
+            
+            for link in links:
+                text = get_webpage_text(page, link)
+                
+                # Get chunks and save to vectorDB
+                
+            # Answer question via retrieved chunks
         
             
 

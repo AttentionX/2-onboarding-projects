@@ -6,28 +6,6 @@
 
 ## Week 1️⃣ - retriever-augmented Q&A 
 
-### 베이스라인 - Hybrid search with Chain-of-Thought moderation ([`RAGVer5`](https://github.com/eubinecto/tinyRAG/blob/e6bcacbca872a7e0b04c2baaf992c1126a5fbfa8/tinyrag/rag_v5.py#L6-L72))
-
-example Q & A with `RAGVer5` | 
---- | 
-<a href="https://asciinema.org/a/CqOiYktayTo6MXJ5MlgvPKj4C" target="_blank"><img src="https://asciinema.org/a/CqOiYktayTo6MXJ5MlgvPKj4C.svg" width="700"/></a> |
--  how it's made - the retriever 🔎
-      - `RAGVer1`: term-matching search with BM25
-         - pros: high precision (`main goal` / `내일 날씨` 와 같은 키워드 검색에 용이)
-         - cons: low recall (`what are the keyfindings of the paper?` / `내일 우산 필요해`와 같은 의도파악이 필요한 질의에 약함)
-      - `RAGVer2`: semantic search with ANN
-         - pros: high recall (의도파악에 용이)
-         - cons: low precision (키워드 검색에 약함 - 이것도 못찾아? 같은 경우가 왕왕 있음)
-      - `RAGVer3`: 그럼 둘다 써보자 - bringing the best of both worlds with hybrid search
-- how it's made - the reader 📖
-  - `RAGVer4`: augmented generation with stuffing
-  - `RAGVer5`: chitchat moderation with Chain-of-Thought & Microsoft’s guidance
-
-  
-### 팀 프로젝트 - go above and beyond `RAGVer5`
-
-🔥 하이브리드 검색보다 나은 방법이 있을까요? Reader를 더 개선해볼 수 있을까요? `RAGVer5`보다 더 나은 Q & A 시스템을 만들어보세요!
-
 ➡️ 상세설명: [week1/README.md](https://github.com/AttentionX/season-2-onboarding-projects/blob/main/week1/README.md)
 
     

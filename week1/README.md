@@ -50,7 +50,6 @@ main goal 같은 키워드 검색엔 약합니다. 키워드 검색 알고리즘
 
 베이스라인은 질의응답만 할 수 있을 뿐 챗봇이 아닙니다. 대화형 Q & A는 할 수 없습니다. 대화형 Q & A를 구현해보는건 어떨까요? (e.g. [Mendable](https://www.mendable.ai))
 
-e.g. Mendable
 
 ### Real-time Q & A
 

@@ -1,3 +1,5 @@
 # 2. Browsing Agent
 
-netbot - baseline 만들어놓기
+## Examples
+1. [natbot](https://github.com/nat/natbot/tree/main)
+  - October 2022

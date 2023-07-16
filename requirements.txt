@@ -1,4 +1,0 @@
-openai
-tiktoken
-python-dotenv
-pinecone

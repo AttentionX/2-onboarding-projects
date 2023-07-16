@@ -36,34 +36,27 @@ https://github.com/AttentionX/season-2-onboarding-projects/blob/5c7be2540aa23492
 
 ### Chitchat moderation
  
-쓸데 없는 질의에도 검색을 합니다. - 리소스 낭비다. 
+베이스라인은 How are you? / What can you do / what's the weather? / 와 같은 논문과는 무관한 질의에도 검색을 진행합니다. 
+불필요한 리소스 낭비인데요. 논문과 유관/무관 질의인지를 미리 탐지하는 로직을 추가해보면 어떨까요? 
 
-References:
-- Chain-of-Thought prompting 
-- Microsoft's guidance
 
 ### Hybrid Search
 
+semantic search만을 하는 베이스라인은 recall은 높으나 precision은 낮습니다. what are the keyfindings of the paper?와 같은 의도파악이 필요한 질의에 강건하나
+main goal 같은 키워드 검색엔 약합니다. 키워드 검색 알고리즘과 혼합하여 이를 개선해보는 건 어떨까요? (e.g. rank_bm25, reciprocal rank fusion)
 
-References:
-- rank_bm25
-- reciprocal rank fusion
 
 ### Conversational Q & A
 
-`RAGVer5`는 아직 챗봇이 아닙니다. 대화형 Q & A는 할 수 없습니다. 대화형 Q & A를 구현해보는건 어떨까요?  (e.g. [Mendable](https://www.mendable.ai))
+베이스라인은 질의응답만 할 수 있을 뿐 챗봇이 아닙니다. 대화형 Q & A는 할 수 없습니다. 대화형 Q & A를 구현해보는건 어떨까요? (e.g. [Mendable](https://www.mendable.ai))
 
 e.g. Mendable
 
 ### Real-time Q & A
 
-2. `RAGVer5`처럼 검색엔진을 직접 구축할 필요가 있을까요?  그냥 구글을 쓰면 되지 않을까요? 실시간 정보도 얻을 수 있지 않을까요? Retreiver를 구글 검색으로 바꿔보는건 어떨까요? (e.g. [WebChatGPT](https://chrome.google.com/webstore/detail/webchatgpt-chatgpt-with-i/lpfemeioodjbpieminkklglpmhlngfcn))
+베이스라인처럼 검색엔진을 직접 구축할 필요가 있을까요?  그냥 구글을 쓰면 되지 않을까요? 실시간 정보도 얻을 수 있지 않을까요? Retreiver를 구글 검색으로 바꿔보는건 어떨까요? (e.g. [WebChatGPT](https://chrome.google.com/webstore/detail/webchatgpt-chatgpt-with-i/lpfemeioodjbpieminkklglpmhlngfcn))
 
-e.g. WebChatGPT
 
 ### Multimodal Q & A
 
-4. `RAGVer5`는 텍스트만 이해합니다. 이미지로 증강할 수는 없을까요? 멀티모달 정보로 증강을 해보는건 어떨까요? 
-
-- e.g. [GPT4의 위력](https://www.clien.net/service/board/park/17962934))
-- e.g. Bard Lens
+베이스라인은 텍스트만 이해합니다. 이미지로 증강할 수는 없을까요? 멀티모달 정보로 증강을 해보는건 어떨까요?  (e.g. [GPT4의 위력], (https://www.clien.net/service/board/park/17962934), Bard Lens)

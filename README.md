@@ -4,7 +4,16 @@
 - SOTA LLM을 사용해보면서 성능과 잘하는점, 한계를 직접 체험하고 이를 활용해서 새로운 문제를 해결할 수 있는 프로덕트 만들어보기
 - 동아리의 다양한 사람들과 팀 프로젝트를 해보면서 동아리분들 알아가기
 
-## Week 1️⃣ - retriever-augmented Q&A 
+## Week 1️⃣ - Retreiver Augmented Generation (RAG)
+### Why? 
+- e.g. 세종대왕 맥북던짐 사건
+- e.g. 구글 바드 주가폭락 사건
+ 
+### What is it? 
+- e.g. Mendable: langchain 문서 Q & A 가능
+- e.g. BingChat: 실시간 검색결과 반영 (e.g. Linus Tech Tips의 그 영상)
+
+### 온보딩 세션
 
 ➡️ 상세설명: [week1/README.md](https://github.com/AttentionX/season-2-onboarding-projects/blob/main/week1/README.md)
 

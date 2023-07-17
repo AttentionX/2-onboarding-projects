@@ -7,23 +7,24 @@ import openai
 from annoy import AnnoyIndex
 
 
-# --- convert each sentence (chunk) to embeddings (using openai) --- #
+# --- load pre-processed chunks --- #
 with open(Path(__file__).resolve().parent / "openai27052023.yaml", 'r') as f:
     paper = yaml.safe_load(f)
 sentences = paper['sentences']
 
 
-# --- index embeddings for efficient search (using Spotify's annoy)--- #
+# --- embed chunks --- #
 embeddings = [
     r['embedding']
     for r in openai.Embedding.create(input=sentences, model='text-embedding-ada-002')['data']
 ] 
+
+# --- index embeddings for efficient search (using Spotify's annoy)--- #
 hidden_size = len(embeddings[0])
 index = AnnoyIndex(hidden_size, 'angular')  #  "angular" =  cosine
 for i, e in enumerate(embeddings): 
     index.add_item(i , e)
 index.build(10)  # build 10 trees for efficient search
-
 
 # --- iteratively answer questions (retrieve & generate) --- #
 while True:

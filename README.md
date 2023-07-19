@@ -8,6 +8,10 @@
 
 ### What is it? 
 
+[검색엔진은 검색만 합니다. LLM은 학습된 기억에만 의존합니다. RAG는 검색으로 기억을 증강합니다.](https://youtu.be/bZQun8Y4L2A](https://youtu.be/bZQun8Y4L2A?t=2002))| 
+--- | 
+<img width="1190" alt="image" src="https://github.com/AttentionX/season2-onboarding-projects/assets/56193069/a9e05e82-b951-4b80-86df-2623918d02f1"> |
+
 - e.g. [Perplexity](https://www.perplexity.ai): Q & A with in-text citations
 - e.g. [Mendable](https://python.langchain.com/docs/get_started/introduction.html): langchain 문서 Q & A
 

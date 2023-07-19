@@ -5,6 +5,8 @@ from pathlib import Path
 import yaml
 import openai
 from annoy import AnnoyIndex
+from dotenv import load_dotenv
+load_dotenv()
 
 
 # --- load pre-processed chunks --- #

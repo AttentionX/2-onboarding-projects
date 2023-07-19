@@ -1,13 +1,14 @@
 """
 A simple baseline for a question answering system.
 """
+import os
 from pathlib import Path
 import yaml
 import openai
 from annoy import AnnoyIndex
 from dotenv import load_dotenv
 load_dotenv()
-
+openai.api_key = os.environ['OPENAI_API_KEY']
 
 # --- load pre-processed chunks --- #
 with open(Path(__file__).resolve().parent / "openai27052023.yaml", 'r') as f:
@@ -16,6 +17,7 @@ sentences = paper['sentences']
 
 
 # --- embed chunks --- #
+print("embedding chunks...")
 embeddings = [
     r['embedding']
     for r in openai.Embedding.create(input=sentences, model='text-embedding-ada-002')['data']

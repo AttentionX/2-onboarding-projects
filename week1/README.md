@@ -33,10 +33,11 @@ RAG with `python3 baseline_qa.py` | [Raw generation with gpt3.5-turbo](https://c
 `baseline_chunk.py`를 살펴보면 청킹을 어떻게 했는지 확인할 수 있습니다. 
 
 우선 같은 섹션에 있는 문장을 모은 뒤: 
-https://github.com/AttentionX/season-2-onboarding-projects/blob/5c7be2540aa2349294256ed465cb84f52e068573/week1/baseline_chunk.py#L11-L24
+https://github.com/AttentionX/season2-onboarding-projects/blob/5c7be2540aa2349294256ed465cb84f52e068573/week1/baseline_chunk.py#L11-L24
 
 인접한 문장 2개를 이어 chunk를 만들고 있는데요:
-https://github.com/AttentionX/season-2-onboarding-projects/blob/5c7be2540aa2349294256ed465cb84f52e068573/week1/baseline_chunk.py#L25-L35
+https://github.com/AttentionX/season2-onboarding-projects/blob/5c7be2540aa2349294256ed465cb84f52e068573/week1/baseline_chunk.py#L25-L35
+
 
 이게 최선일까요? 인접한 문장 3개를 이어보는건 어떨까요?
 

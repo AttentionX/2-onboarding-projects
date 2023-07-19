@@ -15,9 +15,10 @@ Create `.env` file and type your `OPENAI_API_KEY` in the following format:
 ```
 OPENAI_API_KEY=<your key>
 ```
-Ask questions with `python3 baseline_qa.py` | 
---- | 
-<a href="https://asciinema.org/a/NDDHUuBb5JQyN3Wck6TrBO6jG" target="_blank"><img src="https://asciinema.org/a/NDDHUuBb5JQyN3Wck6TrBO6jG.svg" width="600" /></a> | 
+RAG with `python3 baseline_qa.py` | [Raw generation with gpt3.5-turbo](https://chat.openai.com/share/0d13d304-79a1-48af-81b6-ed9ba2a616fa) | 
+--- | --- | 
+<a href="https://asciinema.org/a/NDDHUuBb5JQyN3Wck6TrBO6jG" target="_blank"><img src="https://asciinema.org/a/NDDHUuBb5JQyN3Wck6TrBO6jG.svg" width="600" /></a> | <img width="400" alt="image" src="https://github.com/AttentionX/season2-onboarding-projects/assets/56193069/627e68e3-13d9-4dd1-bbb5-a4158bb44f41"> | 
+
 
 ## Goal 🥅
 첫 주 온보딩의 목표는 베이스라인의 문제점을 찾고 개선하는 것입니다. 팀별로 베이스라인과 문답해보며 문제점을 발견해보세요. 

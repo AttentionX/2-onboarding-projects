@@ -9,7 +9,7 @@ git clone https://github.com/AttentionX/season2-onboarding-projects.git
 install dependencies:
 ```bash
 cd season2-onboarding-projects/week1
-pip3 install requirements.txt
+pip3 install -r requirements.txt
 ```
 Create `.env` file and type your `OPENAI_API_KEY` in the following format:
 ```

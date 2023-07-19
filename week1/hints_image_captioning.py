@@ -2,12 +2,14 @@ import torch
 import requests
 from PIL import Image
 from transformers import BlipProcessor, BlipForConditionalGeneration
+import openai
 
 processor = BlipProcessor.from_pretrained("Salesforce/blip-image-captioning-base")
 model = BlipForConditionalGeneration.from_pretrained("Salesforce/blip-image-captioning-base")
 
-def run_on_cpu():
-    img_url = 'https://storage.googleapis.com/sfr-vision-language-research/BLIP/demo.jpg' 
+def run_on_cpu(img_url:str=None):
+    if img_url is None:
+        img_url = 'https://storage.googleapis.com/sfr-vision-language-research/BLIP/demo.jpg' 
     raw_image = Image.open(requests.get(img_url, stream=True).raw).convert('RGB')
 
     # conditional image captioning
@@ -65,3 +67,27 @@ def run_on_gpu(f16=False):
     # a woman sitting on the beach with her dog
 
     return caption
+
+def main():
+    caption = run_on_cpu()
+
+    print("Image Successfully Read")
+
+    while True:
+        query = input("Your question: ")
+    
+        prompt = f"""
+        The following is the description of an image:
+        {caption}
+
+        Based on the descrion, answer the following question about the image:
+        {query}
+        """
+
+        chat_completion = openai.ChatCompletion.create(model="gpt-3.5-turbo",
+                                                    messages=[{"role": "user", "content": prompt}])
+        answer = chat_completion.choices[0].message.content
+        print(answer)
+
+if __name__ == "__main__":
+    main()

@@ -5,13 +5,19 @@
 - 동아리의 다양한 사람들과 팀 프로젝트를 해보면서 동아리분들 알아가기
 
 ## Week 1️⃣ - Retreiver Augmented Generation (RAG)
-### Why? 
-- e.g. 세종대왕 맥북던짐 사건
-- e.g. 구글 바드 주가폭락 사건
- 
+
 ### What is it? 
-- e.g. Mendable: langchain 문서 Q & A 가능
-- e.g. BingChat: 실시간 검색결과 반영 (e.g. Linus Tech Tips의 그 영상)
+
+- e.g. [Perplexity](https://www.perplexity.ai): Q & A with in-text citations
+- e.g. [Mendable](https://python.langchain.com/docs/get_started/introduction.html): langchain 문서 Q & A
+
+### Why? 
+
+Retriever-augmented generation(RAG)은 LLM의 고질적인 문제인 환각(hallucination)문제를 완화하기 위해 필요합니다.
+
+- e.g. [세종대왕 맥북던짐 사건](https://www.chosun.com/national/weekend/2023/03/04/HR457QM36JFTXDUVAMMNG23MHQ/)
+- e.g. [구글 바드 주가폭락 사건](https://zdnet.co.kr/view/?no=20230209061625)
+ 
 
 ### 온보딩 세션
 

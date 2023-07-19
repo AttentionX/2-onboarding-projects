@@ -74,7 +74,7 @@ There is no relevant information available to answer the user query about the we
   <summary> 펼치기 </summary>
 
 semantic search만을 하는 베이스라인은 recall은 높으나 precision은 낮습니다. `what are the key findings of the paper?`와 같은 의도파악이 필요한 질의에 강건하나
-`main goal`같은 키워드 검색엔 약합니다. 키워드 검색 알고리즘과 혼합하여 이를 개선해보는 건 어떨까요? (e.g. rank_bm25, reciprocal rank fusion)
+`main goal`같은 키워드 검색엔 약합니다. 키워드 검색 알고리즘과 혼합하여 이를 개선해보는 건 어떨까요? (e.g. [rank_bm25](https://github.com/dorianbrown/rank_bm25), [reciprocal rank fusion](https://weaviate.io/blog/hybrid-search-explained))
 
 </details>
 

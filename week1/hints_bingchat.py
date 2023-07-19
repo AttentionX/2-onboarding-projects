@@ -16,7 +16,7 @@ def get_webpage_text(page, link):
 
     # Extract all text within the body tag
     text_content = soup.body.get_text()
-    raise text_content
+    return text_content
 
 async def playwright_init():
     playwright = await async_playwright().start()
@@ -55,7 +55,7 @@ def main():
             }''', k)
             
             for link in links:
-                text = get_webpage_text(page, link)
+                text = get_webpage_text(page, link['href'])
                 
                 # Get chunks and save to vectorDB
                 

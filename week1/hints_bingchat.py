@@ -1,6 +1,8 @@
 import asyncio
 from playwright.sync_api import sync_playwright
 from playwright.async_api import async_playwright
+import requests
+from bs4 import BeautifulSoup
 
 def get_google_query(query):
     raise NotImplementedError
@@ -9,7 +11,12 @@ def get_webpage_text(page, link):
     page.goto(link)
     
     # Get webpage text
-    raise NotImplementedError
+    response = requests.get(link)
+    soup = BeautifulSoup(response.text, 'html.parser')
+
+    # Extract all text within the body tag
+    text_content = soup.body.get_text()
+    raise text_content
 
 async def playwright_init():
     playwright = await async_playwright().start()

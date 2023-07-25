@@ -183,7 +183,7 @@ class Crawler:
         self.page.set_viewport_size({"width": 1280, "height": 1080})
 
     def go_to_page(self, url):
-        self.page.goto(url=url if "://" in url else "http://" + url)
+        self.page.goto(url=url if "://" in url else "https://" + url)
         self.client = self.page.context.new_cdp_session(self.page)
         self.page_element_buffer = {}
 
@@ -605,7 +605,7 @@ if (
 
     gpt_cmd = ""
     prev_cmd = ""
-    _crawler.go_to_page("google.com")
+    _crawler.go_to_page(f"google.com/search?q={objective}")
     try:
         while True:
             browser_content = "\n".join(_crawler.crawl())

@@ -33,4 +33,5 @@ OPENAI_KEY=sk-
 
 ## Challenges
 1. Hallucination
-![Hallucination Problem](./Agent Hallucination.png)
+
+![Hallucination Problem](./Agent_Hallucination.png)

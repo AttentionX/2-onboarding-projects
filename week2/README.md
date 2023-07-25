@@ -35,3 +35,10 @@ OPENAI_KEY=sk-
 1. Hallucination
 
 ![Hallucination Problem](./Agent_Hallucination.png)
+
+## Suggestions
+1. Select a domain
+    - Search at CGV homepage initially
+2. Include required info beforehand
+    - Account info, etc
+3. Prompt the agent to only use information that were explicitly give by the user and ask for more specific info for clarification and completing the task

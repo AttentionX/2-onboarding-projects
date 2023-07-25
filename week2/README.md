@@ -19,6 +19,9 @@ OPENAI_KEY=sk-
 ## Examples
 1. [natbot](https://github.com/nat/natbot/tree/main)
   - October 2022
+2. [AutoGPT](https://github.com/Significant-Gravitas/Auto-GPT)
+    - March 2023
+    - [HTML Extractor](https://github.com/Significant-Gravitas/Auto-GPT/blob/master/autogpt/processing/html.py)
 
 ## Example Tasks
 1. Browsing Automation

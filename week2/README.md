@@ -7,8 +7,13 @@ cd season2-onboarding-projects/week2
 pip3 install -r requirements.txt
 ```
 2. Setup OpenAI API
+- Add API Key at openai_api.py
 ```python
-
+openai.api_key = "OpenAI API Key"
+```
+- Or add to .env file in root folder
+```bash
+OPENAI_KEY=sk-
 ```
 
 ## Examples
@@ -25,3 +30,7 @@ pip3 install -r requirements.txt
             - 피쟈집 / 피자 종류 이 중에서 선택해주세요
 3. General Problem Solving
     1. 트위터에서 활동하면서 한 시간안에 팔로워 100명 만들어봐
+
+## Challenges
+1. Hallucination
+![Hallucination Problem](./Agent Hallucination.png)

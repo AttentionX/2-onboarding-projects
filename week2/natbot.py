@@ -9,6 +9,8 @@ adapted by - Adam
 # Set OPENAI_API_KEY to your API key, and then run this from a terminal.
 #
 
+import re
+from dotenv import load_dotenv
 from playwright.sync_api import sync_playwright
 import time
 import sys
@@ -22,7 +24,17 @@ import openai_api
 
 chatgpt = "gpt-3.5-turbo"
 gpt4 = 'gpt-4'
-openai_api = openai_api.OpenAI_API(model=gpt4)
+
+# Load environment variables from .env file
+load_dotenv()
+# Get OpenAI API key from environment variables
+openai.api_key = os.getenv("OPENAI_API_KEY")
+if openai.api_key == None:
+    raise ValueError(
+        "OpenAI API key not found. Please set the OPENAIAPI environment variable."
+    )
+
+openai_api = openai_api.OpenAI_API(model=chatgpt)
 
 quiet = False
 if len(argv) >= 2:
@@ -37,127 +49,33 @@ if len(argv) >= 2:
 prompt_template = """
 You are an agent controlling a browser. You are given:
 
-    (1) an objective that you are trying to achieve
+    (1) objectives that you are trying to achieve
     (2) the URL of your current web page
     (3) a simplified text description of what's visible in the browser window (more on that below)
 
-You can issue these commands:
-    SCROLL UP - scroll up one page
-    SCROLL DOWN - scroll down one page
-    CLICK X - click on a given element. You can only click on links, buttons, and inputs!
-    TYPE X "TEXT" - type the specified text into the input with id X
-    TYPESUBMIT X "TEXT" - same as TYPE above, except then it presses ENTER to submit the form
+You can issue this command:
+    CLICK X - click on a given element. You can only click on links, buttons, and inputs! X is in form of integer and wrapped with link.
+The format of the browser content is highly simplified; all formatting elements are stripped. Based on your given objective, issue whatever command you believe will get you closest to achieving your goal. Don't try to interact with elements that you can't see. Do not navigate to other website. If you have only on choice, click it right away. Whenever you see a modal, press the OK button.
 
-The format of the browser content is highly simplified; all formatting elements are stripped.
-Interactive elements such as links, inputs, buttons are represented like this:
+Now, You are Ph.D GPT.
 
-        <link id=1>text</link>
-        <button id=2>text</button>
-        <input id=3>text</input>
+### Goal
+Your Goal is to succesfully graduate with three requirements. 
+- Passing qualification Exam. All PhD students must pass the qualifying exam in December.
+- Writing three journal/conference papers. You are required to publish at least 3 journal papers to qualify your degree.
+- Remain hope ranging from 1 ~ 100
 
-Images are rendered as their alt text like this:
-
-        <img id=4 alt=""/>
-
-Based on your given objective, issue whatever command you believe will get you closest to achieving your goal.
-You always start on Google; you should submit a search query to Google that will take you to the best page for
-achieving your objective. And then interact with that page to achieve your objective.
-
-If you find yourself on Google and there are no search results displayed yet, you should probably issue a command 
-like "TYPESUBMIT 7 "search query"" to get to a more useful page.
-
-Then, if you find yourself on a Google search results page, you might issue the command "CLICK 24" to click
-on the first link in the search results. (If your previous command was a TYPESUBMIT your next command should
-probably be a CLICK.)
-
-Don't try to interact with elements that you can't see.
-
-Here are some examples:
-
-EXAMPLE 1:
-==================================================
-CURRENT BROWSER CONTENT:
-------------------
-<link id=1>About</link>
-<link id=2>Store</link>
-<link id=3>Gmail</link>
-<link id=4>Images</link>
-<link id=5>(Google apps)</link>
-<link id=6>Sign in</link>
-<img id=7 alt="(Google)"/>
-<input id=8 alt="Search"></input>
-<button id=9>(Search by voice)</button>
-<button id=10>(Google Search)</button>
-<button id=11>(I'm Feeling Lucky)</button>
-<link id=12>Advertising</link>
-<link id=13>Business</link>
-<link id=14>How Search works</link>
-<link id=15>Carbon neutral since 2007</link>
-<link id=16>Privacy</link>
-<link id=17>Terms</link>
-<text id=18>Settings</text>
-------------------
-OBJECTIVE: Find a 2 bedroom house for sale in Anchorage AK for under $750k
-CURRENT URL: https://www.google.com/
-YOUR COMMAND: 
-TYPESUBMIT 8 "anchorage redfin"
-==================================================
-
-EXAMPLE 2:
-==================================================
-CURRENT BROWSER CONTENT:
-------------------
-<link id=1>About</link>
-<link id=2>Store</link>
-<link id=3>Gmail</link>
-<link id=4>Images</link>
-<link id=5>(Google apps)</link>
-<link id=6>Sign in</link>
-<img id=7 alt="(Google)"/>
-<input id=8 alt="Search"></input>
-<button id=9>(Search by voice)</button>
-<button id=10>(Google Search)</button>
-<button id=11>(I'm Feeling Lucky)</button>
-<link id=12>Advertising</link>
-<link id=13>Business</link>
-<link id=14>How Search works</link>
-<link id=15>Carbon neutral since 2007</link>
-<link id=16>Privacy</link>
-<link id=17>Terms</link>
-<text id=18>Settings</text>
-------------------
-OBJECTIVE: Make a reservation for 4 at Dorsia at 8pm
-CURRENT URL: https://www.google.com/
-YOUR COMMAND: 
-TYPESUBMIT 8 "dorsia nyc opentable"
-==================================================
-
-EXAMPLE 3:
-==================================================
-CURRENT BROWSER CONTENT:
-------------------
-<button id=1>For Businesses</button>
-<button id=2>Mobile</button>
-<button id=3>Help</button>
-<button id=4 alt="Language Picker">EN</button>
-<link id=5>OpenTable logo</link>
-<button id=6 alt ="search">Search</button>
-<text id=7>Find your table for any occasion</text>
-<button id=8>(Date selector)</button>
-<text id=9>Sep 28, 2022</text>
-<text id=10>7:00 PM</text>
-<text id=11>2 people</text>
-<input id=12 alt="Location, Restaurant, or Cuisine"></input> 
-<button id=13>Let’s go</button>
-<text id=14>It looks like you're in Peninsula. Not correct?</text> 
-<button id=15>Get current location</button>
-<button id=16>Next</button>
-------------------
-OBJECTIVE: Make a reservation for 4 for dinner at Dorsia in New York City at 8pm
-CURRENT URL: https://www.opentable.com/
-YOUR COMMAND: 
-TYPESUBMIT 12 "dorsia new york city"
-==================================================
+### How to
+- Simply make your choice at the beginning of each month. All outcomes are determined by the random number generator. Do not take them seriously. Sometimes the RNG can be brutal.
+- Take account of "Items:" and "Status" panel for making next-step choices. HTML components wraps around [ITEMS] and [STATUS] below:
+    - <div id="items_window" class="panel">
+        <h3>Items:</h3><ul>[ITEMS]</ul></div>
+    - <div id="status_window" class="panel">
+        <h3>Status:</h3><ul>[STATUS]</ul></div>
+- Click available options given at the each turn to play the game.
+    - <div class="choices_container"><a class="btn" href="javascript: void(0)">[CHOICES]</a></div>
+    - Whenever you see a modal, press the OK button.
+- Let's think step-by-step. Decide based on previous choices history and outputs.
 
 The current browser content, objective, and current URL follow. Reply with your next command to the browser.
 
@@ -167,8 +85,11 @@ $browser_content
 ------------------
 
 OBJECTIVE: $objective
-CURRENT URL: $url
+PREVIOUS STATUS: $previous_status
+PREVIOUS OPTIONS: $previous_options
 PREVIOUS COMMAND: $previous_command
+CURRENT STATUS: $current_status
+AVAILABLE CHOICES: $available_choices
 YOUR COMMAND:
 """
 
@@ -192,16 +113,6 @@ class Crawler:
         self.client = self.page.context.new_cdp_session(self.page)
         self.page_element_buffer = {}
 
-    def scroll(self, direction):
-        if direction == "up":
-            self.page.evaluate(
-                "(document.scrollingElement || document.body).scrollTop = (document.scrollingElement || document.body).scrollTop - window.innerHeight;"
-            )
-        elif direction == "down":
-            self.page.evaluate(
-                "(document.scrollingElement || document.body).scrollTop = (document.scrollingElement || document.body).scrollTop + window.innerHeight;"
-            )
-
     def click(self, id):
         # Inject javascript into the page which removes the target= attribute from all links
         js = """
@@ -220,10 +131,6 @@ class Crawler:
             self.page.mouse.click(x, y)
         else:
             print("Could not find element")
-
-    def type(self, id, text):
-        self.click(id)
-        self.page.keyboard.type(text)
 
     def enter(self):
         self.page.keyboard.press("Enter")
@@ -250,10 +157,6 @@ class Crawler:
         document_offset_height = page.evaluate("document.body.offsetHeight")
         document_scroll_height = page.evaluate("document.body.scrollHeight")
 
-#		percentage_progress_start = (win_upper_bound / document_scroll_height) * 100
-#		percentage_progress_end = (
-#			(win_height + win_upper_bound) / document_scroll_height
-#		) * 100
         percentage_progress_start = 1
         percentage_progress_end = 2
 
@@ -551,11 +454,26 @@ class Crawler:
             id_counter += 1
 
         print("Parsing time: {:0.2f} seconds".format(time.time() - start))
-        return elements_of_interest
+        
+        find_idx = 0
+        for idx, item in enumerate(elements_of_interest):
+            if "©" in item:
+                find_idx = idx
+                break
+
+        return elements_of_interest[:find_idx]
+
+
 
 if (
     __name__ == "__main__"
 ):
+
+    CLEANR = re.compile('<.*?>')
+    def clean_html(raw_html):
+        cleantext = re.sub(CLEANR, '', raw_html)
+        return cleantext
+
     _crawler = Crawler()
 
     def print_help():
@@ -564,18 +482,19 @@ if (
             "(h) to view commands again\n(r/enter) to run suggested command\n(o) change objective"
         )
 
-    def get_gpt_command(objective, url, previous_command, browser_content):
+    def get_gpt_command(objective, previous_status, previous_choice, previous_command, browser_content, current_status, available_choices):
         prompt = prompt_template
         prompt = prompt.replace("$objective", objective)
-        prompt = prompt.replace("$url", url[:100])
+        prompt = prompt.replace("$previous_status", previous_status)
+        prompt = prompt.replace("$previous_choice", previous_choice)
         prompt = prompt.replace("$previous_command", previous_command)
         prompt = prompt.replace("$browser_content", browser_content[:4500])
+        prompt = prompt.replace("$current_status", current_status)
+        prompt = prompt.replace("$available_choices", available_choices)
         response = openai_api.chatgpt(prompt)
         print(response)
         return response
-        
-        
-
+    
 
     def run_cmd(cmd):
         """
@@ -583,46 +502,62 @@ if (
         """
         cmd = cmd.split("\n")[0]
 
-        if cmd.startswith("SCROLL UP"):
-            _crawler.scroll("up")
-        elif cmd.startswith("SCROLL DOWN"):
-            _crawler.scroll("down")
-        elif cmd.startswith("CLICK"):
+        if cmd.startswith("CLICK"):
             commasplit = cmd.split(",")
             id = commasplit[0].split(" ")[1]
             _crawler.click(id)
-        elif cmd.startswith("TYPE"):
-            spacesplit = cmd.split(" ")
-            id = spacesplit[1]
-            text = spacesplit[2:]
-            text = " ".join(text)
-            # Strip leading and trailing double quotes
-            text = text[1:-1]
+        else:
+            pass
+        time.sleep(1)
 
-            if cmd.startswith("TYPESUBMIT"):
-                text += '\n'
-            _crawler.type(id, text)
-
-        time.sleep(2)
-
-    objective = "Make a reservation for 2 at 7pm at bistro vida in menlo park"
+    objective = """Your Goal is to succesfully graduate with three requirements. 
+    - Passing qualification Exam
+    - Writing three journal/conference papers
+    - Remain hope ranging from 1 ~ 100
+    """
     print("\nWelcome to natbot! What is your objective?")
     i = input()
     if len(i) > 0:
         objective = i
 
-    gpt_cmd = ""
+    gpt_cmd = "" # current command
     prev_cmd = ""
-    _crawler.go_to_page(f"google.com/search?q={objective}")
+    current_status = ""
+    previous_status = ""
+    current_choice = ""
+    previous_choice = ""
+    _crawler.go_to_page(f"https://research.wmz.ninja/projects/phd/index.html")
     try:
         while True:
-            browser_content = "\n".join(_crawler.crawl())
+            list_roi_text = _crawler.crawl() 
+            browser_content = "\n".join(list_roi_text)
+
+            # load previous runtime variables
             prev_cmd = gpt_cmd
-            gpt_cmd = get_gpt_command(objective, _crawler.page.url, prev_cmd, browser_content)
+            previous_status = current_status
+            previous_choice = current_choice
+
+            # overwrite runtime variable for status
+            list_status = []
+            list_choices = []
+            for roi_idx, roi_text in enumerate(list_roi_text):
+                if 'link' in roi_text:
+                    list_choices.append(roi_text)
+                elif 'text' in roi_text:
+                    list_status.append(roi_text)
+            current_status = " ".join(list_status)
+            available_choices = " ".join(list_choices)
+            # breakpoint()
+
+            # overwrite runtime variable for current_choice
+            if gpt_cmd != "":
+                current_choice = clean_html(list_roi_text[int(gpt_cmd[-1])])
+            
+            # overwrite runtime variable for choice
+            gpt_cmd = get_gpt_command(objective, previous_status, previous_choice, prev_cmd, browser_content, current_status, available_choices)
             gpt_cmd = gpt_cmd.strip()
 
             if not quiet:
-                print("URL: " + _crawler.page.url)
                 print("Objective: " + objective)
                 print("----------------\n" + browser_content + "\n----------------\n")
             if len(gpt_cmd) > 0:

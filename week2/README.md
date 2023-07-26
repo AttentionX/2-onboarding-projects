@@ -31,6 +31,11 @@ OPENAI_KEY=sk-
         - 태스크에 필요한 추가 정보가 있으면 물어보는지 확인
             - 어디로 배달하면 될까요?
             - 피쟈집 / 피자 종류 이 중에서 선택해주세요
+    3. Elon Musk가 XAI 공개한 첫 트위터에 축하 댓글 달아줘
+2. Information Retrieval
+    1. 최신 에어팟 프로 아마존 리뷰 요약해줘
+        - 새로운 Action 추가 필요 (Save_to_file 등)
+    2. 카리나가 가장 좋아하는 음식은 뭐야?
 3. General Problem Solving
     1. 트위터에서 활동하면서 한 시간안에 팔로워 100명 만들어봐
 

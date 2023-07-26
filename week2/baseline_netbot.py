@@ -11,6 +11,8 @@ from sys import argv, exit, platform
 import openai
 import os
 
+openai.api_key = os.environ.get("OPENAI_API_KEY")
+
 quiet = False
 if len(argv) >= 2:
 	if argv[1] == '-q' or argv[1] == '--quiet':

@@ -1,3 +1,7 @@
+"""
+https://github.com/nat/natbot
+adapted by - Adam
+"""
 #!/usr/bin/env python3
 #
 # natbot.py
@@ -29,6 +33,7 @@ if len(argv) >= 2:
             + "exercise caution when running suggested commands."
         )
 
+# 프롬프트에 추가한 명령에 대한 설명을 추가해주세요. 
 prompt_template = """
 You are an agent controlling a browser. You are given:
 
@@ -573,6 +578,9 @@ if (
 
 
     def run_cmd(cmd):
+        """
+        여기에 원하는 명령을 추가해주세요. (e.g. SAVE_TO_TXT, PRINT_ELEMENT)
+        """
         cmd = cmd.split("\n")[0]
 
         if cmd.startswith("SCROLL UP"):

@@ -16,6 +16,13 @@ openai.api_key = "OpenAI API Key"
 OPENAI_KEY=sk-
 ```
 
+## Run
+- 실행
+```python
+python3 natbot.py
+```
+- 자동으로 선택한 옵션들을 참조해서 "Enter" 치면 실행됩니다
+
 ## Examples
 1. [natbot](https://github.com/nat/natbot/tree/main)
   - October 2022

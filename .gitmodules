@@ -19,3 +19,24 @@
 [submodule "week1/season2-week1-team7"]
 	path = week1/season2-week1-team7
 	url = https://github.com/AttentionX/season2-week1-team7
+[submodule "week2/season2-week2-team7"]
+	path = week2/season2-week2-team7
+	url = https://github.com/AttentionX/season2-week2-team7.git
+[submodule "week2/season2-week2-team6"]
+	path = week2/season2-week2-team6
+	url = https://github.com/AttentionX/season2-week2-team6.git
+[submodule "week2/season2-week2-team5"]
+	path = week2/season2-week2-team5
+	url = https://github.com/AttentionX/season2-week2-team5.git
+[submodule "week2/season2-week2-team4"]
+	path = week2/season2-week2-team4
+	url = https://github.com/AttentionX/season2-week2-team4.git
+[submodule "week2/season2-week2-team3"]
+	path = week2/season2-week2-team3
+	url = https://github.com/AttentionX/season2-week2-team3.git
+[submodule "week2/season2-week2-team2"]
+	path = week2/season2-week2-team2
+	url = https://github.com/AttentionX/season2-week2-team2.git
+[submodule "week2/season2-week2-team1"]
+	path = week2/season2-week2-team1
+	url = https://github.com/AttentionX/season2-week2-team1.git

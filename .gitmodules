@@ -55,3 +55,6 @@
 [submodule "week3/season2-week3-team5"]
 	path = week3/season2-week3-team5
 	url = https://github.com/AttentionX/season2-week3-team5.git
+[submodule "week3/season2-week3-team6"]
+	path = week3/season2-week3-team6
+	url = https://github.com/AttentionX/season2-week3-team6.git
